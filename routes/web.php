@@ -78,6 +78,15 @@ Route::get('addplan', 'PlanController@create')->name('plans.create');
 
 Route::post('storeplan', 'PlanController@store')->name('plans.store');
 
+
+
+Route::get('plan-update/{plan}', ['as' => 'plan.update','uses' => 'PlanController@edit']);
+
+Route::post('plan-store', ['as' => 'plan.store','uses' => 'PlanController@update']);
+
+Route::delete('del-plan/{plan}', ['as' => 'del.plan','uses' => 'PlanController@destroy']);
+
+
 Route::post('postpay', 'DepositController@store')->name('post.pay');
 
 Route::get('deposit-btc-qr/{dep}', 'DepositController@details');
@@ -100,3 +109,11 @@ Route::get('wallets', 'AccountController@index')->name('wallets.index');
 Route::get('userwallet', 'DashController@getWallet')->name('userwallets.index');
 
 Route::get('ref', 'DashController@getRef')->name('ref.index');
+
+Route::get('account-update/{account}', ['as' => 'account.update','uses' => 'AdminController@acctUpdate']);
+
+Route::post('acc-store', ['as' => 'acc.store','uses' => 'AdminController@accStore']);
+
+Route::delete('del-acc/{account}', ['as' => 'del.acc','uses' => 'AdminController@dellAcc']);
+
+Route::post('sendalert', 'DepositController@alert')->name('alert.send');

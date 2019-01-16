@@ -82,7 +82,7 @@
                         <div class="row">
                             <div class="col col--md-auto">
                                 <div class="text--center">
-                                    <a class="site-logo" href="index-2.html">
+                                    <a class="site-logo" href="/">
                                         <img class="img-responsive" src="img/logo.png" alt="Cryptvault">
                                     </a>
                                 </div>

@@ -101,7 +101,9 @@ class PlanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $plan = Plan::where('id', $id)->firstOrFail();
+
+        return view('admin.planupdate', compact('plan'));
     }
 
     /**
@@ -111,9 +113,35 @@ class PlanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $plan_id = $request->input('plan_id');
+
+        //Update Deposit
+        
+        
+
+       
+        
+        //Get Payment instance 
+        $plan = Plan::where('id', $plan_id)->firstOrFail();
+
+        
+        $plan->name = request('name');
+        $plan->profit = request('profit');
+        $plan->robot_charge = request('charge');
+        $plan->duration = request('duration');
+        $plan->minimum = request('min');
+        $plan->maximum = request('max');
+
+
+        
+
+        $plan->save();
+
+
+        
+        return redirect('plans')->with('status', 'Plan details updated');
     }
 
     /**
@@ -124,6 +152,21 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //$id = $this->decode($hash);
+        $plan = Plan::where('id', $id)->first();
+
+        
+
+        // Remove the user
+        $plan->delete();
+
+        // All done
+        $message = "Plan has been deleted.";
+        
+
+        session()->flash('success', $message);
+        return redirect()->route('plans.index');
     }
+
+    
 }

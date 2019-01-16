@@ -79,6 +79,19 @@ class AdminController extends Controller
     }
 
 
+
+    public function acctUpdate($id) {
+
+
+        $acc = Account::where('id', $id)->firstOrFail();
+
+        return view('admin.accupdate', compact('acc'));
+
+
+    }
+
+
+
      public function store(Request $request)
     {
         //Validate 
@@ -126,13 +139,14 @@ class AdminController extends Controller
         $account->balance = $newAmount;
         $account->earnings = $newEarn;
         $account->dollars = $newDoll;
-        $account->owing = request('owing');
+        
 
 
         
 
         $account->save();
 
+        $deposit->owing = request('owing');
 
         $deposit->status = request('status');
 
@@ -172,6 +186,63 @@ class AdminController extends Controller
 
         return redirect('userwithdrwals')->with('status', 'Withdrawal details updated');
     }
+
+
+
+    public function accStore(Request $request)
+    {
+        //Validate 
+        
+
+        //grab variables
+        $acc_id = $request->input('acc_id');
+
+        //Update Deposit
+        
+        
+
+       
+        
+        //Get Payment instance 
+        $account = Account::where('id', $acc_id)->firstOrFail();
+
+        
+        $account->balance = request('amount');
+        $account->earnings = request('earnings');
+        $account->dollars = request('dollars');
+        
+
+        
+
+        $account->save();
+
+
+        
+        return redirect('wallets')->with('status', 'Account details updated');
+    }
+
+
+
+    public function dellAcc($id)
+    {
+        // Fetch the user object
+        //$id = $this->decode($hash);
+        $acc = Account::where('id', $id)->first();
+
+        
+
+        // Remove the user
+        $acc->delete();
+
+        // All done
+        $message = "Account has been removed.";
+        
+
+        session()->flash('success', $message);
+        return redirect()->route('wallets.index');
+    }
+
+
 
 
 }

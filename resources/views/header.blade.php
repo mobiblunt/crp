@@ -69,7 +69,7 @@
             -->
 
             <div class="logo">
-                <img class="img-responsive" width="30" height="40" src="img/logo.png" alt="Cryptvault">
+                <img class="img-responsive" width="30" height="40" src="{{ url('/') }}/img/logo.png" alt="Cryptvault">
                 <a href="/" >
                     Cryptvault
                 </a>
@@ -246,7 +246,6 @@
   </div>
 </div>
 
-
         <!--   Core JS Files   -->
     <script src="{{ url('/') }}/js/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="{{ url('/') }}/js/bootstrap.min.js" type="text/javascript"></script>
@@ -305,13 +304,7 @@
         new ClipboardJS('.btn');
 
 
-       $('#qrcode a').qrcode({ 
-        render: 'image',
-        text: $("#btcc").val(),
-        ecLevel: 'L',
-        size: "203"
-    });
-
+       
 
        $('#qrcodee a').qrcode({ 
         render: 'image',
@@ -319,6 +312,10 @@
         ecLevel: 'L',
         size: "203"
     });
+
+
+
+       
 
          $("#investment").change(function(){
               

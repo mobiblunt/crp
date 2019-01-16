@@ -18,14 +18,14 @@
 	                                        <div class="col-md-5">
 												<div class="form-group label-floating">
 													<label class="control-label">Amount</label>
-													<input type="text" min="1" name="amount" maxlength="10" class="form-control">
+													<input type="text" min="1" name="amount" maxlength="10" class="form-control" required>
 												</div>
 	                                        </div>
 	                                       
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Mobile</label>
-													<input type="text" name="mobile" class="form-control" >
+													<input type="text" name="mobile" class="form-control" required>
 												</div>
 	                                        </div>
 	                                    </div>
@@ -34,7 +34,7 @@
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Payment Option</label>
-													<select name="option" class="form-control">
+													<select name="option" class="form-control" required>
 														<option value="BTC" class="form-control">BTC</option>
 														<option value="ETH" class="form-control">ETH</option>
 														<option value="LTC" class="form-control">LTC</option>
@@ -45,7 +45,7 @@
 	                                       <div class="col-md-6">
 											<div class="form-group label-floating">
 												<label class="control-label">Payment Address</label>
-												<input type="text" name="address" class="form-control">
+												<input type="text" name="address" class="form-control" required>
 												</div>
 	                                        </div>
 	                                        

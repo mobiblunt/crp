@@ -20,6 +20,7 @@
 	                                    	<th>Date</th>
 	                                    	<th>Address</th>
 											<th>Status</th>
+											
 											<th>Details</th>
 	                                    </thead>
 	                                    <tbody>
@@ -30,6 +31,7 @@
 	                                        	<td>{{$depi->created_at}}</td>
 	                                        	<td><button type="button" data-toggle="modal" data-target="#myModal">View</button></td>
 												<td><span class="badge badge-primary">{{$depi->status}}</span></td>
+												
 												
 	                                        	<td><a href="{{url('deposit-btc-qr')}}/{{$depi->id}}">
                                         <button>Details</button>

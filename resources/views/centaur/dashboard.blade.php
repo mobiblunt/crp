@@ -6,6 +6,40 @@
 <div class="content">
                 <div class="container-fluid">
                     @if (Sentinel::check() && Sentinel::inRole('administrator'))
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <h4 class="title">Alerts</h4>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-primary">
+                                            <th>Transaction ID</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($alert as $alt)
+                                            <tr>
+                                                <td>{{$alt->deposit->trans_id}}</td>
+                                                <td>{{$alt->amount}} </td>
+                                                <td>{{$alt->date_paid}}</td>
+                                                
+                                                
+                                                
+                                               
+                                            </tr>
+                                            @endforeach
+                                            
+                                            
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="row">
                         <div class="col-md-4">

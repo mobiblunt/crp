@@ -9,6 +9,7 @@ use App\Deposit;
 use App\Withdrawal;
 use App\Account;
 use App\User;
+use App\Alert;
 //use Sentinel;
 
 class DashController extends Controller
@@ -29,13 +30,17 @@ class DashController extends Controller
 
         $user = Sentinel::getUser()->plan_id;
 
+        $alert = Alert::all();
+
+        //dd($alert);
+
         $plan1 = Plan::where('id', $user)->first();
 
         $acct = Account::where('user_id', Sentinel::getUser()->id)->first();
 
         //dd($acct);
 
-        return view('centaur.dashboard' , compact('plan1','acct'));
+        return view('centaur.dashboard' , compact('plan1','acct','alert'));
     }
 
 

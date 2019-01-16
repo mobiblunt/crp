@@ -8,6 +8,7 @@ use CoinPayment;
 use Uuid;
 use App\Deposit; 
 use App\Plan;
+use App\Alert;
 
 class DepositController extends Controller
 {
@@ -55,6 +56,7 @@ class DepositController extends Controller
             'plan_id' => request('plan_id'),
             'trans_id' => $tranid,
             'mobile' => request('mobile'),
+            'owing' => 0,
             ]);
 
             
@@ -86,6 +88,39 @@ class DepositController extends Controller
 
         return view('home.details', compact('depo','plan', 'total'));
     }
+
+
+        public function alert(Request $request)
+    {
+         $result = $this->validate($request, [
+            'amount' => 'required',
+            'date' => 'required',
+            
+            ]);
+
+        
+
+        $alert = Alert::create([
+            'deposit_id' => request('dep_id'),
+            'amount' => request('amount'),
+            'date_paid' => request('date'),
+            ]);
+
+            
+            
+
+            $dep_id = request('dep_id');
+
+            session()->flash('success', "Alert Has been Sent.");
+
+            return redirect('/deposit-btc-qr/'.$dep_id);
+
+
+            
+            //return view('home.details', compact('dep'));
+    }
+
+
 
     /**
      * Display the specified resource.

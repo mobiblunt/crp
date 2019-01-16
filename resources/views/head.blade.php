@@ -1,203 +1,366 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>@yield('title')</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>@yield('title')</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your page description here" />
-  <meta name="author" content="" />
+        <!-- Bootstrap - Latest compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+<!-- Bootstrap core CSS     -->
+    <link href="{{ url('/') }}/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- css -->
-  <link href="{{ url('/') }}/css/bootstrap.css" rel="stylesheet" />
-  <link href="{{ url('/') }}/css/bootstrap-responsive.css" rel="stylesheet" />
-  <link href="{{ url('/') }}/css/prettyPhoto.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="{{ url('/') }}/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url('/') }}/css/cryptoticker.css">
+    <!--  Material Dashboard CSS    -->
+    <link href="{{ url('/') }}/css/material-dashboard.css" rel="stylesheet"/>
 
-
-  <!-- Theme skin -->
-  <link id="t-colors" href="{{ url('/') }}/color/default.css" rel="stylesheet" />
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('/') }}/ico/apple-touch-icon-144-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url('/') }}/ico/apple-touch-icon-114-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url('/') }}/ico/apple-touch-icon-72-precomposed.png" />
-  <link rel="apple-touch-icon-precomposed" href="{{ url('/') }}/ico/apple-touch-icon-57-precomposed.png" />
-  <link rel="shortcut icon" href="ico/favicon.png" />
-
-  <!-- =======================================================
-    Theme Name: Remember
-    Theme URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-</head>
-
-<body>
-
-  <div class="ticker" id="example"></div>
-
-  <div id="wrapper">
-
-    <!-- start header -->
-    <header>
-      <div class="top">
-        
-      </div>
-      <div class="container">
-        @include('Centaur::notifications')
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="{{ url('/') }}/css/demo.css" rel="stylesheet" />
 
 
-        <div class="row nomargin">
-          <div class="span4">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <!-- Load google font
+        ================================================== -->
+        <script type="text/javascript">
+            WebFontConfig = {
+                google: { families: [ 'Open+Sans:300,400,500','Lato:900', 'Poppins:400', 'Catamaran:300,400,500,600,700'] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
+                '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
+
+        <!-- Load other scripts
+        ================================================== -->
+        <script type="text/javascript">
+            var _html = document.documentElement,
+                isTouch = (('ontouchstart' in _html) || (navigator.msMaxTouchPoints > 0) || (navigator.maxTouchPoints));
+
+            _html.className = _html.className.replace("no-js","js");
+
+            isTouch ? _html.classList.add("touch") : _html.classList.add("no-touch");
+        </script>
+        <script type="text/javascript" src="js/device.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="sidebar" data-color="blue" data-image="{{ url('/') }}/img/sidebar-1.jpg">
+
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+                Tip 2: you can also add an image using data-image tag
+            -->
+
             <div class="logo">
-              <h1><a href="/"><i class="icon-tint"></i> Cryptvault</a></h1>
+                <img class="img-responsive" width="30" height="40" src="{{ url('/') }}/img/logo.png" alt="Cryptvault">
+                <a href="/" >
+                    Cryptvault
+                </a>
             </div>
-          </div>
-          <div class="span8">
-            <div class="navbar navbar-static-top">
-              <div class="navigation">
-                <nav>
-                  <ul class="nav topnav">
+
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="{{ Route::is('dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('dashboard') }}">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    
                     @if (Sentinel::check() && Sentinel::inRole('administrator'))
+                            <li class="{{ Route::is('get.pay') ? 'active' : '' }}">
+                        <a href="{{ route('get.pay') }}">
+                            <i class="material-icons">person</i>
+                            <p>Payments</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('get.witu') ? 'active' : '' }}">
+                        <a href="{{ route('get.witu') }}">
+                            <i class="material-icons">person</i>
+                            <p>Withdrawals</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('wallets.index') ? 'active' : '' }}">
+                        <a href="{{ route('wallets.index') }}">
+                            <i class="material-icons">person</i>
+                            <p>Wallets</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('plans.index') ? 'active' : '' }}">
+                        <a href="{{ route('plans.index') }}">
+                            <i class="material-icons">person</i>
+                            <p>Plans</p>
+                        </a>
+                    </li>
+                    @else
+                    <li class="{{ Route::is('get.trans') ? 'active' : '' }}">
+                        <a href="{{ route('get.trans') }}">
+                            <i class="material-icons">local_atm</i>
+                            <p>Transactions</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('get.dep') ? 'active' : '' }}">
+                        <a href="{{ route('get.dep') }}">
+                            <i class="fa fa-btc"></i>
+                            <p>Deposit Funds</p>
+                        </a>
+                    </li>
+                   <!--  <li>
+                        <a href="{{ route('get.dep') }}">
+                            <i class="material-icons">description</i>
+                            <p>Upload Documents</p>
+                        </a>
+                    </li> -->
+
+                    <li class="{{ Route::is('get.wit') ? 'active' : '' }}">
+                        <a href="{{ route('get.wit') }}">
+                            <i class="material-icons">money</i>
+                            <p>Withdraw Funds</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('userwallets.index') ? 'active' : '' }}">
+                        <a href="{{ route('userwallets.index') }}">
+                            <i class="material-icons">account_balance_wallet</i>
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('ref.index') ? 'active' : '' }}">
+                        <a href="{{ route('ref.index') }}">
+                            <i class="material-icons">supervisor_account</i>
+                            <p>Referrals</p>
+                        </a>
+                    </li>
+                   
+                    @endif
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                        
+                        @if (Sentinel::check() && Sentinel::inRole('administrator'))
                             <li class="{{ Request::is('users*') ? 'active' : '' }}"><a href="{{ route('users.index') }}">Users</a></li>
                             <li class="{{ Request::is('roles*') ? 'active' : '' }}"><a href="{{ route('roles.index') }}">Roles</a></li>
                         @endif
-                    
-                    <li class="dropdown">
-                      <a href="#">Beginners <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="{{ route('steps.home') }}">First Steps</a></li>
-                        <li><a href="{{ route('robots.home') }}">Plans</a></li>
+                    </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (Sentinel::check())
+                            <li><p class="navbar-text">{{ Sentinel::getUser()->first_name }}</p></li>
+                            @else
+                            <li><a href="{{ route('auth.login.form') }}">Login</a></li>
+                            <li><a href="{{ route('auth.register.form') }}">Register</a></li>
+                            @endif
+                            <li>
+                                <a href="{{ route('dashboard') }}" class="dropdown-toggle">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                   <i class="material-icons">person</i>
+                                   <p class="hidden-lg hidden-md">Profile</p>
+                               </a>
+                               <ul class="dropdown-menu">
+                                @if (Sentinel::check())
+                                <li><a href="{{ route('view.account', Sentinel::getUser()->id) }}">Manage Account</a></li>
+                                <li><a href="{{ route('auth.logout') }}">Log Out</a></li>
+                                @endif
+                                  </ul>
+                            </li>
+                        </ul>
+
                         
+                    </div>
+                </div>
+            </nav>
+            <input type="hidden" id="btcc" name="btc" value="{{ Config::get('siteVar.btcadd1') }}">
+        
+            @include('Centaur::notifications')
+            @yield('content')
+        <div class="container">
+        <footer class="footer">
+                <div class="container">
+                    
+                    <p class="copyright">
+                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">CryptVault</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+    <div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Send Alert</h4>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" role="form" method="post" action="{{ route('alert.send') }}">
+            <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Transaction Id:</label>
+                                                    <input type="text" value="{{$depo->trans_id }}" name="amount"class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Amount Paid:</label>
+                                                    <input type="text" name="amount" class="form-control" required>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Date</label>
+                                                    <input type="date" name="date" class="form-control" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <input name="_token" value="{{ csrf_token() }}" type="hidden">
+                                        <input name="dep_id" value="{{ $depo->id }}" id="dep" type="hidden">
+                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        <!--   Core JS Files   -->
+    <script src="{{ url('/') }}/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="{{ url('/') }}/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{ url('/') }}/js/material.min.js" type="text/javascript"></script>
+    <script src="{{ url('/') }}/js/jquery-qrcode.min.js" type="text/javascript"></script>
+
+    <!--  Charts Plugin -->
+    <script src="{{ url('/') }}/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="{{ url('/') }}/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+    <!-- Material Dashboard javascript methods -->
+    <script src="{{ url('/') }}/js/material-dashboard.js"></script>
+
+    <script src="{{ url('/') }}/js/demo.js"></script>
+    <div id="btn-to-top-wrap">
+            <a id="btn-to-top" class="circled" href="javascript:void(0);" data-visible-offset="800"></a>
+        </div>
+
+       <!--  <script src="js/jquery-2.2.4.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script> -->
+
+        <script type="text/javascript" src="js/main.min.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+
+                <!-- BEGIN JIVOSITE CODE {literal} -->
+        <script type='text/javascript'>
+        (function(){ var widget_id = 'Paw7lkpeN6';var d=document;var w=window;function l(){
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+        <!-- {/literal} END JIVOSITE CODE -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+        <!-- Latest compiled and minified Bootstrap JavaScript -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+        <!-- Restfulizer.js - A tool for simulating put,patch and delete requests -->
+        <script src="{{ asset('restfulizer.js') }}"></script>
+
+        <script>
+     $(document).ready(function(){
+
+        new ClipboardJS('#byn');
+
+
+       
+
       
 
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="{{ route('affiliate.home') }}">Affiliate </a>
-                    </li>
-                    @if (Sentinel::check())
-                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            
-                            <li><a href="{{ route('auth.logout') }}">Log Out</a></li>
-                        @else
-                    <li>
-                      <a href="{{ route('auth.login.form') }}">Login </a>
-                    </li>
-                    <li>
-                      <a href="{{ route('auth.register.form') }}">Register </a>
-                    </li>
-                    @endif
-                    <li>
-                      <a href="{{ route('contact.home') }}">Contact </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <!-- end navigation -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    @yield('content')
+      $('#qrcode a').qrcode({ 
+        render: 'image',
+        text: $("#btcc").val(),
+        ecLevel: 'L',
+        size: "203"
+    });
 
 
+       
 
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="widget">
-              <div class="footer_logo">
-                <h3><a href="/"><i class="icon-tint"></i> EverGrowth</a></h3>
-              </div>
-              <address>
-                              <strong>EverGrowth company Inc.</strong><br>
-                            Somestreet KW 101, Park Village W.01<br>
-                            Jakarta 13426 Indonesia
-                        </address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> support@evergrowthllc.com
-              </p>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
-              <ul class="link-list">
-                <li><a href="{{ route('about.home') }}">Our company</a></li>
-                <li><a href="{{ route('terms.home') }}">Terms and conditions</a></li>
-                <li><a href="{{ route('privacy.home') }}">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="{{ route('contact.home') }}">Contact Us</a></li>
-              </ul>
-
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
+         $("#investment").change(function(){
               
+
+             rob = $("#pran").val();
+             robocharge = $("#charge").val();
+             investment = $("#investment").val();  
+             subTotal   = (parseFloat(investment)*parseFloat(rob))/100;
               
-                <ul class="social-network">
-                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-circled icon-bglight icon-facebook"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-circled icon-bglight icon-twitter"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
-              </ul>
-              
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="sub-footer">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <div class="copyright">
-                <p><span>&copy; Cryptvault Inc.<script>document.write(new Date().getFullYear())</script> All right reserved</span></p>
-              </div>
+             Total   = Number(investment) + Number(robocharge);
+             $("#profito").val(subTotal);
+             $("#total").val(Total);
 
-            </div>
+         })
+         
 
-            <div class="span6">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
-
-  <!-- javascript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="{{ url('/') }}/js/jquery.js"></script>
-  <script src="{{ url('/') }}/js/jquery.easing.1.3.js"></script>
-  <script src="{{ url('/') }}/js/bootstrap.js"></script>
-  <script src="{{ url('/') }}/js/modernizr.custom.js"></script>
-  <script src="{{ url('/') }}/js/toucheffects.js"></script>
-  <script src="{{ url('/') }}/js/google-code-prettify/prettify.js"></script>
-  <script src="{{ url('/') }}/js/jquery.prettyPhoto.js"></script>
-  <script src="{{ url('/') }}/js/portfolio/jquery.quicksand.js"></script>
-  <script src="{{ url('/') }}/js/portfolio/setting.js"></script>
-  <script src="{{ url('/') }}/js/animate.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typeit@5.10.7/dist/typeit.min.js"></script>
-  <script src="{{ url('/') }}/js/jquery.cryptoticker.js"></script>
-
-
-  <!-- Template Custom JavaScript File -->
-  <script src="{{ url('/') }}/js/custom.js"></script>
-
-</body>
-
+     })
+</script>
+    </body>
 </html>
+
+
+
+

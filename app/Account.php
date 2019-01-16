@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     protected $fillable = [
-        'user_id', 'balance', 'owing', 'earnings','dollars'
+        'user_id', 'balance', 'earnings','dollars'
     ];
 
 

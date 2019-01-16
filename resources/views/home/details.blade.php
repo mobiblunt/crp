@@ -1,9 +1,11 @@
-@extends('header')
+@extends('head')
 
 @section('title', 'Deposit Details')
 
 @section('content')
+
 <div class="content">
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
@@ -27,11 +29,12 @@
 						 0 
 						 @endif
 						 <i class="fa fa-bitcoin"></i></p>
-						<p class="category"><span class="text-success"> Balance Amount:  </span> 0<i class="fa fa-bitcoin"></i></p>
+						<p class="category"><span class="text-success"> Balance Amount:  </span> {{ $depo->owing}}<i class="fa fa-bitcoin"></i></p>
 					</div>
 					<div class="card-footer">
+						<button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-success">Send Payment Alert</button>
 						<div class="stats">
-							<i class="material-icons">access_time</i> updated 4 minutes ago 
+							<i class="material-icons">access_time</i> updated in real time 
 						</div>
 					</div>
 				</div>
@@ -46,7 +49,7 @@
 						<div class="stats">
 							<p id="foo"><i class="fa fa-bitcoin"></i>{{ Config::get('siteVar.btcadd1') }}</p>
 						</div>
-						<button class="btn" data-clipboard-target="#foo">
+						<button id="byn" data-clipboard-target="#foo">
     						Copy Address
 							</button>
 					</div>
@@ -55,6 +58,8 @@
 			</div>
 		</div>
 	</div>
+
+
 
 
 @stop
