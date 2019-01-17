@@ -20,21 +20,7 @@
         <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+        
         <!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.html">
         <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.html">
         <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.html">
@@ -78,9 +64,9 @@
         <!-- start header -->
         <header id="top-bar" class="top-bar--light">
             <div id="top-bar__inner">
-                <a id="top-bar__logo" class="site-logo" href="index-2.html">
-                    <img class="img-responsive"  src="img/logo.png" alt="demo" />
-                    <img class="img-responsive"  src="img/logo.png" alt="demo" />
+                <a id="top-bar__logo" class="site-logo" href="/">
+                    <img class="img-responsive"  src="img/logo.png" alt="Crypvault" />
+                    <img class="img-responsive"  src="img/logo.png" alt="Crypvault" />
                 </a>
 
                 <a id="top-bar__navigation-toggler" href="javascript:void(0);"><span></span></a>
@@ -180,7 +166,7 @@
 
                                     <p>Cryptvault is the world’s most popular platform to trade bitcoin, ethereum, and litecoin</p>
 
-                                    <form class="wallet-form  form--horizontal" action="#">
+                                  <!--  <form class="wallet-form  form--horizontal" action="#">
                                         <div class="b-table">
                                             <div class="cell v-middle">
                                                 <div class="input-wrp">
@@ -194,9 +180,9 @@
                                         </div>
                                     </form>
 
-                                    <p>
+                                     <p>
                                         <a class="link" href="#"><small>Do you have a question?</small></a> &nbsp;&nbsp; <a class="link" href="#"><small>What is Bitcoin?</small></a>
-                                    </p>
+                                    </p> -->
                                 </div>
                             </div>
                         </div>
@@ -472,8 +458,8 @@
 
                     <h2 class="__title">Our Plans</h2>
 
-                        <h5 class="__subtitle">Cryptvault provides access to the next generation
-of trading tools. Our robots have been developed with the latest market and trading innovations: MetaTrader Auto 4 and MetaTrader Auto 5. These robots have been sub-divided into plans to suit our clients and their pockets.</h5>
+                        <p>Cryptvault provides access to the next generation
+of trading tools. Our robots have been developed with the latest market and trading innovations: MetaTrader Auto 4 and MetaTrader Auto 5. These robots have been sub-divided into plans to suit our clients and their pockets.</p>
 
                         
                     </div>
@@ -761,74 +747,7 @@ of trading tools. Our robots have been developed with the latest market and trad
 
             
 
-            <!-- start section -->
-            <section class="section section--base-bg">
-                <div class="grid grid--container">
-                    <!-- start testimonial slider -->
-                    <div class="row">
-                        <div class="col col--md-2  hide show--md">
-                            <i class="testimonial-ico">“</i>
-                        </div>
-
-                        <div class="col col--md-10">
-                            <!-- start testimonial -->
-                            <div class="testimonial testimonial--slider" data-slick='{"autoplay": true, "arrows": false, "dots": true, "speed": 1000}'>
-                                <!-- start item -->
-                                <div class="__item">
-                                    <div class="__text">
-                                        <p>
-                                            Oh no way! Can I arks you a question, this heaps good hokey pokey is as stuffed as a snarky misses. Good afterble constanoon. Can't handle the jandle, do you happen to have a bucket or a hose bro?, piece of piss. Mean while, in the marae, Maui and the Armed Offenders Squad were up to no good with a bunch of sweet pavlovas. Chur bro, you're not in Guatemala now. 
-                                        </p>
-                                    </div>
-
-                                    <div class="__author">
-                                        <h5 class="__author--name">Joseph Allan</h5>
-                                        <span class="__author--position">CEO Silver Development</span>
-                                    </div>
-                                </div>
-                                <!-- end item -->
-
-                                <!-- start item -->
-                                <div class="__item">
-                                    <div class="__text">
-                                        <p>
-                                            Oh no way! Can I arks you a question, this heaps good hokey pokey is as stuffed as a snarky misses. Good afterble constanoon. Can't handle the jandle, do you happen to have a bucket or a hose bro?, piece of piss. Mean while, in the marae, Maui and the Armed Offenders Squad were up to no good with a bunch of sweet pavlovas. Chur bro, you're not in Guatemala now. 
-                                        </p>
-
-                                        <p>
-                                            Oh no way! Can I arks you a question, this heaps good hokey pokey is as stuffed as a snarky misses. Good afterble constanoon. Can't handle the jandle, do you happen to have a bucket or a hose bro?, piece of piss. Mean while, in the marae, Maui and the Armed Offenders Squad were up to no good with a bunch of sweet pavlovas. Chur bro, you're not in Guatemala now. 
-                                        </p>
-                                    </div>
-
-                                    <div class="__author">
-                                        <h5 class="__author--name">Joseph Allan</h5>
-                                        <span class="__author--position">CEO Silver Development</span>
-                                    </div>
-                                </div>
-                                <!-- end item -->
-
-                                <!-- start item -->
-                                <div class="__item">
-                                    <div class="__text">
-                                        <p>
-                                            Oh no way! Can I arks you a question, this heaps good hokey pokey is as stuffed as a snarky misses. Good afterble constanoon. Can't handle the jandle, do you happen to have a bucket or a hose bro?, piece of piss. Mean while, in the marae, Maui and the Armed Offenders Squad were up to no good with a bunch of sweet pavlovas. Chur bro, you're not in Guatemala now. 
-                                        </p>
-                                    </div>
-
-                                    <div class="__author">
-                                        <h5 class="__author--name">Joseph Allan</h5>
-                                        <span class="__author--position">CEO Silver Development</span>
-                                    </div>
-                                </div>
-                                <!-- end item -->
-                            </div>
-                            <!-- end testimonial -->
-                        </div>
-                    </div>
-                    <!-- end testimonial slider -->
-                </div>
-            </section>
-            <!-- end section -->
+            
 
             <!-- start section -->
             <section class="section jarallax" data-speed="0.5">
@@ -888,8 +807,8 @@ of trading tools. Our robots have been developed with the latest market and trad
                 <div class="row row--xs-middle">
                     <div class="col col--sm-10 col--md-8 col--lg-4">
                         <div class="__item">
-                            <a class="site-logo" href="index-2.html">
-                                <img class="img-responsive lazy" width="175" height="42" src="img/blank.gif" data-src="img/logo.png" alt="Cryptvault" />
+                            <a class="site-logo" href="/">
+                                <img class="img-responsive lazy" src="img/blank.gif" data-src="img/logo.png" alt="Cryptvault" />
                             </a>
 
                             <p class="__text">

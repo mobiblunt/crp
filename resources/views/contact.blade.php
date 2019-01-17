@@ -1,85 +1,140 @@
-@extends('head')
+@extends('fronthead')
 
 @section('title', 'Contact')
 
 @section('content')
-<section id="inner-headline">
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="inner-heading">
-              <h2>Get in touch</h2>
+<!-- start intro -->
+    <div id="intro" class="jarallax" data-speed="0.5" style="background-image: url(img/intro_img/1.jpg);">
+      <div class="grid grid--container">
+        <div class="row row--xs-middle">
+          <div class="col col--lg-5 text--center">
+            <h1 class="__title">Get In Touch</h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end intro -->
+    <section class="section section--no-pt section--no-pb">
+        <!-- this is demo key "AIzaSyBXQROV5YMCERGIIuwxrmaZbBl_Wm4Dy5U" -->
+        <div id="g_map--0001" class="g_map" data-api-key="AIzaSyBXQROV5YMCERGIIuwxrmaZbBl_Wm4Dy5U" data-longitude="44.958309" data-latitude="34.109925" data-marker="img/marker.png"></div>
+
+        <style type="text/css">
+          #g_map--0001 { height: 380px }
+
+          @media only screen and (min-width: 560px)
+          {
+            #g_map--0001 { height: 475px }
+          }
+        </style>
+      </section>
+      <!-- end section -->
+
+      <!-- start section -->
+      <section class="section section--light-bg">
+        <div class="grid grid--container">
+          <div class="row">
+            <div class="col col--md-5 col--lg-4">
+              <!-- start company address -->
+              <address class="company-address">
+                <div class="__inner">
+                  <div class="row">
+                    <!-- start item -->
+                    <div class="col col--sm-6 col--md-12">
+                      <div class="__item">
+                        <i class="__ico">
+                          <img class="img-responsive lazy" src="img/blank.gif" data-src="img/ico/ico_phone.png" width="24" height="44" alt="demo" />
+                        </i>
+
+                        <div>
+                          <h4 class="__title h5">Phone Numbers</h4>
+
+                          <span>
+                            <a href="tel:+14815162342">+1 481 516 2342</a>
+                            <br>
+                            <a href="tel:+14815162342">+1 481 516 2342</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end item -->
+
+                    <!-- start item -->
+                    <div class="col col--sm-6 col--md-12">
+                      <div class="__item">
+                        <i class="__ico">
+                          <img class="img-responsive lazy" src="img/blank.gif" data-src="img/ico/ico_marker.png" width="32" height="44" alt="demo" />
+                        </i>
+
+                        <div>
+                          <h4 class="__title h5">Location</h4>
+
+                          <span>
+                            1010 Avenue of the Moon
+                            <br>
+                            New York, NY 10018 US.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end item -->
+
+                    <!-- start item -->
+                    <div class="col col--sm-6 col--md-12">
+                      <div class="__item">
+                        <i class="__ico">
+                          <img class="img-responsive lazy" src="img/blank.gif" data-src="img/ico/ico_mail.png" width="44" height="34" alt="demo" />
+                        </i>
+
+                        <div>
+                          <h4 class="__title h5">Email</h4>
+
+                          <span>
+                            <a href="mailto:hello@mycryptvault.com">hello@mycryptvault.com</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end item -->
+                  </div>
+                </div>
+              </address>
+              <!-- end company address -->
+            </div>
+
+            <div class="col hide--md col-MB-40"></div>
+
+            <div class="col col--md-7 col--lg-8">
+              <div class="posts-feedback">
+                <form class="js-contact-form" action="#">
+                  <div class="row">
+                    <div class="col col--sm-6 col--md-12 col--lg-6">
+                      <div class="input-wrp">
+                        <input class="textfield" name="name" type="text" value="" placeholder="Name" />
+                      </div>
+                    </div>
+
+                    <div class="col col--sm-6 col--md-12 col--lg-6">
+                      <div class="input-wrp">
+                        <input class="textfield" name="email" type="text" value="" placeholder="Email" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="input-wrp">
+                    <textarea class="textfield" name="message" placeholder="Comments"></textarea>
+                  </div>
+
+                  <button class="custom-btn custom-btn--medium custom-btn--style-1" type="submit" role="button">Send a message</button>
+
+                  <div class="form__note"></div>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="span8">
-            <ul class="breadcrumb">
-              <li><a href="/">Home</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Contact</li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="content">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-      <div class="container">
-        <div class="row">
-          <div class="span8">
-            <h4>Get in touch with us by filling contact form below</h4>
-
-
-
-            <form id="contactform" action="" method="post" role="form" class="contactForm">
-
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-
-              <div class="row">
-                <div class="span4 field form-group">
-                  <input type="text" name="name" placeholder="* Enter your full name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="span4 field form-group">
-                  <input type="text" name="email" placeholder="* Enter your email address" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="span8 margintop10 field form-group">
-                  <input type="text" name="subject" placeholder="Enter your subject" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="span8 margintop10 field form-group">
-                  <textarea rows="12" name="message" class="input-block-level" placeholder="* Your message here..." data-rule="required" data-msg="Please write something"></textarea>
-                  <div class="validation"></div>
-
-                  <p>
-                    <button class="btn btn-color margintop10 pull-left" type="submit">Send message</button>
-                    <span class="pull-right margintop20">* Please fill all required form field, thanks!</span>
-                  </p>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="span4">
-            <div class="clearfix"></div>
-            <aside class="right-sidebar">
-
-              <div class="widget">
-                <h5 class="widgetheading">Contact information<span></span></h5>
-
-                <ul class="contact-info">
-                  <li><label>Address :</label> Tinggi sekali tower Jl.Kemacetan timur<br /> Jakarta selatan - Indonesia</li>
-                  <li><label>Phone :</label>+62 123 456 78 / +62 123 456 79</li>
-                  <li><label>Fax : </label>+62 123 456 10 / +62 123 456 11</li>
-                  <li><label>Email : </label> info@yourdomain.com</li>
-                </ul>
-
-              </div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+      <!-- end section -->
 
 
 @stop
